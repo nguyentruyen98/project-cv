@@ -1,0 +1,21 @@
+.register{
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f1f1f1f1;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+.register>button{
+    border:none;
+    background-color: #bfc7c7;
+    color: white;
+    padding: 10px;
+}
+.register>input{
+    border: none;
+    padding-left: 20px;
+    color: gray;
+    width: 500px;
+}

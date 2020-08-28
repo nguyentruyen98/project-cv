@@ -1,0 +1,9 @@
+.newCollection{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+.newCollection__img >img{
+    width: 100%;
+}
+

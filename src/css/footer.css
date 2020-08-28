@@ -1,0 +1,23 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px
+}
+.footer__header{
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 15px;
+
+}
+
+.footer__conten{
+    font-size: 15px;
+    font-weight: 300;
+}
+.footer__icon .MuiSvgIcon-root{
+    margin-right: 15px;
+}
+.footer__img{
+    margin-top: 15px;
+    width: 140px;
+}

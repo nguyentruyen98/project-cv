@@ -1,0 +1,49 @@
+.cart{
+    margin:50px;
+    width: 400px;
+}
+.cart__header{
+    display: flex;
+    justify-content: space-between;
+}
+.cart__header>.MuiSvgIcon-root{
+    cursor: pointer;
+}
+.cart__item{
+    margin-top: 100px;
+}
+.cart__line{
+    margin-top: 30px;
+    width: 100%;
+    float: left;
+    border-top: 2px solid black;
+}
+.cart__footer{
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+}
+.cart__button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.cart__button >button{
+    border:none;
+    background-color: #bfc7c7;
+    color: white;
+    padding:10px;
+    padding:0 30px;
+    font-size: 12px;
+    height: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.cart__buttonclose{
+    background-color: #bfc7c7;
+}
+.cart__buttonclose:hover{
+    background-color: black;
+    color: white;
+}

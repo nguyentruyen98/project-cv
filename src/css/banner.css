@@ -1,0 +1,8 @@
+.width{
+    width: 100%;
+    /* display: block; */
+    max-width: 100%;
+}
+.banner{
+    margin-top: 100px;
+}

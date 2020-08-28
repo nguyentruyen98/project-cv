@@ -1,0 +1,25 @@
+.newproduct__image{
+    width: 100%;
+    display: block;
+}
+.newproduct{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.newproduct__title{
+    text-align: center;
+    padding-top: 10px;
+    color: gray;
+}
+.newproduct{
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.newproduct__title:hover{
+    color: black;
+    /* text-decoration: none !important; */
+}
+.newproduct__title>p{
+    font-weight: 600;
+}

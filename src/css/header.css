@@ -1,0 +1,43 @@
+.header__logo{
+    width: 150px;
+}
+.header{
+    background-color: white;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 19;
+    position: fixed;
+    /* top:28px */
+}
+.header__icon{
+    position: relative;
+    margin-right: 50px;
+
+    
+
+}
+.header>p{
+    visibility: hidden;
+    width: 170px;
+}
+.header__icon .MuiSvgIcon-root{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.header__quantity{
+    display: inline-block;
+    background-color: #bfc7c7;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 100%;
+    font-weight: bold;
+    margin: 0;
+}
