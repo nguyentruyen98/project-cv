@@ -3,7 +3,7 @@ import ProductsDetail from './component/ProductsDetail';
 import QuanAo from './component/QuanAo';
 import NewProducts from './component/NewProducts';
 import MainPage from './component/MainPage';
-import ChuyenTrang from './component/ChuyenTrang';
+import Login from './component/Login';
 
 const routes = [
     {
@@ -25,6 +25,11 @@ const routes = [
         path: '/sellingproducts/:id',
         exact: true,
         main: (match) => <ProductsDetail match={match}></ProductsDetail>
+    },
+    {
+        path: '/login',
+        exact: true,
+        main: () => <Login ></Login>
     },
     {
         path: '/bosuutap',

@@ -2,12 +2,8 @@ import React, { useState, useEffect } from 'react'
 import NewProduct from './NewProduct'
 import '../css/newproducts.css'
 import database from './firebase';
-import ProductsDetail from './ProductsDetail';
-import ChuyenTrang from './ChuyenTrang';
+
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 function NewProducts({ type }) {

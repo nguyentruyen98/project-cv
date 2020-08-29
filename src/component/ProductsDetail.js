@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import '../css/productdetail.css'
 import database from './firebase';
-import { useSelector, useDispatch } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import { addToCart } from '../redux/actions';
+import Message from './Message';
+
+
 function ProductsDetail({ match }) {
 
   const [quantity, setQuantity] = useState(1);
   const [productDetail, setProductDetail] = useState([])
   const [size, setSizee] = useState('')
   const [color, setColor] = useState('')
+  const [open, setOpen] = useState(false);
 
-
+  
 
   const dispatch = useDispatch();
   const dispatchAddToCart = (product, quantity, size, color) => { dispatch(addToCart(product, quantity, size, color)) }
 
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
 
   const addQuantity = () => {
     setQuantity(quantity + 1)
@@ -63,7 +73,7 @@ function ProductsDetail({ match }) {
               <div className="productdetail__info">
                 <div className='productdetail__name'>
                   <h3>{product.name}</h3>
-                  {product.option?(<div><p>{`${product.info}/${color}/${size}`}</p></div>):(<div><p>{product.info}</p></div>)}
+                  {product.option ? (<div><p>{`${product.info}/${color}/${size}`}</p></div>) : (<div><p>{product.info}</p></div>)}
                   <div className="productdetail__price">
                     <p>{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(product.price)}</p>
                   </div>
@@ -81,7 +91,7 @@ function ProductsDetail({ match }) {
                         {
                           ['XS', 'S', 'M', 'XL'].map(item => {
                             return (
-                            <label className={size == item ? ('isSelected') : ('')} onClick={() => setSizeProducts(item)}>{item}</label>
+                              <label className={size == item ? ('isSelected') : ('')} onClick={() => setSizeProducts(item)}>{item}</label>
                             )
                           })
                         }
@@ -91,7 +101,7 @@ function ProductsDetail({ match }) {
                   <div className="productdetail__quantity">
                     <button onClick={subQuanity}>-</button><input value={quantity} onChange={handleChange}></input><button onClick={addQuantity}>+</button>
                   </div>
-                  <button onClick={() => dispatchAddToCart(product, quantity, size, color)}>THÊM VÀO GIỎ</button>
+                  <button onClick={() => { return (dispatchAddToCart(product, quantity, size, color), setOpen(true)) }}>THÊM VÀO GIỎ</button>
                   <div className="productdetail__description">
                     <p>
                       <strong>Mô tả:</strong>
@@ -106,6 +116,7 @@ function ProductsDetail({ match }) {
                 </div>
 
               </div>
+              <Message state={open} handleClose={handleClose} mess={'Thêm vào giỏ hàng thành công ?'}></Message>
             </div>
           )
       })}

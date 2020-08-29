@@ -3,14 +3,9 @@ import './App.css';
 import TopHeader from './component/TopHeader';
 import Header from './component/Header';
 import Menu from './component/Menu';
-import Banner from './component/Banner';
-import Title from './component/Title';
-import NewCollections from './component/NewCollections'
-import NewProducts from './component/NewProducts'
 import Register from './component/Register'
 import Footer from './component/Footer';
 import routes from './routes.js';
-import TemporaryDrawer from './component/Drawer'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import $ from "jquery";
 import {

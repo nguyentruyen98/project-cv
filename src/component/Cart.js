@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/cart.css'
 import CloseIcon from '@material-ui/icons/Close';
 import CartItem from './CartItem';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 function Cart({ close }) {
     // const getCartTotal = cart => 
     //     cart?.reduce((item, amount) => item.products.product + amount, 0)
