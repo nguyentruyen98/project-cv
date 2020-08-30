@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NewProduct from './NewProduct'
 import '../css/newproducts.css'
-import database from './firebase';
+import {database} from './firebase';
 
 import {
   Link

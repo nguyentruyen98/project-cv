@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import TopHeader from './component/TopHeader';
 import Header from './component/Header';
@@ -7,12 +7,15 @@ import Register from './component/Register'
 import Footer from './component/Footer';
 import routes from './routes.js';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import {setUser} from './redux/actions';
+import {  useDispatch } from 'react-redux';
 import $ from "jquery";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import { auth } from './component/firebase'
 function App() {
   var position = $(window).scrollTop();
   $(window).scroll(function () {
@@ -33,6 +36,25 @@ function App() {
       window.scrollTo(0, c - c / 16);
     }
   };
+  const dispatch = useDispatch();
+  const dispatchSetUser = (user) => { dispatch(setUser(user)) }
+
+  useEffect(() => {
+    const unsubcrible = auth.onAuthStateChanged(authUser => {
+      if (authUser) {
+        dispatchSetUser(authUser)
+        console.log(authUser)
+      }
+      else {
+        dispatchSetUser(null)
+        console.log(authUser)
+      }
+    });
+    return () => {
+      unsubcrible();
+    }
+  }, [])
+
   return (
     <Router>
       <TopHeader></TopHeader>

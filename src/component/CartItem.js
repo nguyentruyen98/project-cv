@@ -17,7 +17,7 @@ function CartItem() {
       };
     return (
         <div>
-            {productList.length === 0 ? (<div>Hiện chưa có sản phẩm</div>) : (<div>{productList?.map((item, index) => {
+            {productList.rootReducer.length === 0 ? (<div>Hiện chưa có sản phẩm</div>) : (<div>{productList.rootReducer?.map((item, index) => {
                 return (
                     <div className='cartitem'>
                         <div className="cartitem__img" alt='Hinh'>

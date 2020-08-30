@@ -1,0 +1,48 @@
+.registerpage{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100vh ;
+}
+.registerpage__container{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+.registerpage__container>form>input{
+    margin-bottom: 10px;
+    background-color: white;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border:1px solid gray;
+    padding-left:10px ;
+}
+.registerpage__container>form>h5{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.registerpage__container>form>button{
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: lightgray;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    border:none;
+    font-weight: 600;
+}
+.registerpage__container>h2{
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.registerpage__container>form>button:hover{
+    background-color: black;
+    color: white;
+}

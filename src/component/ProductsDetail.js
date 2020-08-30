@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../css/productdetail.css'
-import database from './firebase';
+import {database} from './firebase';
 import {  useDispatch } from 'react-redux';
 import { addToCart } from '../redux/actions';
 import Message from './Message';

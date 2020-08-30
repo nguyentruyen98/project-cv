@@ -10,7 +10,7 @@ function Cart({ close }) {
     // console.log(cart)
 
     const productList = useSelector((state) => state)
-    const a = productList.reduce((amount, item) => item.products.product.price*item.quantity + amount, 0);
+    const a = productList.rootReducer.reduce((amount, item) => item.products.product.price*item.quantity + amount, 0);
     console.log(a)
     return (
         <div>

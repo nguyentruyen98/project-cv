@@ -1,6 +1,5 @@
-import { type } from "jquery"
 
-export const addToCart = (product, quantity, size,color) => {
+export const addToCart = (product, quantity, size, color) => {
     return ({
         type: 'ADD_TO_CART',
         payload: {
@@ -8,7 +7,7 @@ export const addToCart = (product, quantity, size,color) => {
         },
         quantity: quantity,
         size: size,
-        color:color
+        color: color
 
     })
 }
@@ -18,5 +17,11 @@ export const removeToCard = id => {
         payload: {
             id: id
         }
+    })
+}
+export const setUser = user => {
+    return ({
+        type: 'SET_USER',
+        user: user
     })
 }

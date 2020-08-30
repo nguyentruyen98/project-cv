@@ -1,5 +1,13 @@
 .header__logo{
+    /* width: 150px; */
+}
+.header__logo{
+    flex: 0.4;
+    text-align: center;
+}
+.header__logo__img{
     width: 150px;
+
 }
 .header{
     background-color: white;
@@ -12,21 +20,26 @@
     justify-content: space-between;
     z-index: 19;
     position: fixed;
-    /* top:28px */
 }
 .header__icon{
     position: relative;
-    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex: 0.3;
+    justify-content: center;
+    width: 100%;
+    /* padding-right: 50px; */
 
     
 
 }
 .header>p{
     visibility: hidden;
-    width: 170px;
+    flex: 0.3;
 }
 .header__icon .MuiSvgIcon-root{
-    margin-right: 10px;
+    /* margin-right: 10px; */
     cursor: pointer;
 }
 .header__quantity{
@@ -40,4 +53,28 @@
     border-radius: 100%;
     font-weight: bold;
     margin: 0;
+}
+.header__icon div{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+
+
+}
+.header__option{
+    display: inline;
+    flex-direction: column;
+    align-items: flex-start !important;
+    margin-left: 10px;
+}
+.header__option p{
+    margin: 0;
+}
+.header__optionOne{
+    font-size: 14px;
+}
+.header__optionTwo{
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
 }

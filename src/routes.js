@@ -4,7 +4,7 @@ import QuanAo from './component/QuanAo';
 import NewProducts from './component/NewProducts';
 import MainPage from './component/MainPage';
 import Login from './component/Login';
-
+import RegisterPage from './component/RegisterPage';
 const routes = [
     {
         path: '/',
@@ -30,6 +30,11 @@ const routes = [
         path: '/login',
         exact: true,
         main: () => <Login ></Login>
+    },
+    {
+        path: '/register',
+        exact: true,
+        main: () => <RegisterPage ></RegisterPage>
     },
     {
         path: '/bosuutap',
