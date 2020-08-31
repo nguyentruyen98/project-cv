@@ -1,0 +1,15 @@
+.searchitem{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    border-bottom: 1px dotted #dfe0e1;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+.searchitem__img>img{
+    height: 90px;
+}
+.searchitem__name{
+    font-size: 15px;
+    font-weight: 350;
+}

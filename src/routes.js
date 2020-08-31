@@ -27,6 +27,11 @@ const routes = [
         main: (match) => <ProductsDetail match={match}></ProductsDetail>
     },
     {
+        path: '/searchproduct/:id',
+        exact: true,
+        main: (match) => <ProductsDetail match={match}></ProductsDetail>
+    },
+    {
         path: '/login',
         exact: true,
         main: () => <Login ></Login>

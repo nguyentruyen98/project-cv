@@ -73,6 +73,7 @@
 }
 #menu{
     z-index: 100;
-    position: sticky;
-    top:128px
+    position: fixed;
+    top:128px;
+    width: 100%;
 }

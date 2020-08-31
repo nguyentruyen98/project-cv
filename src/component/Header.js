@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/header.css'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import SearchIcon from '@material-ui/icons/Search';
@@ -8,8 +8,9 @@ import { useSelector } from 'react-redux';
 import { auth } from './firebase';
 import Cart from './Cart'
 import {
-  Link,useHistory
+  Link, useHistory
 } from "react-router-dom";
+import Search from './Search';
 function Header() {
   const [state, setState] = React.useState({
     top: false,
@@ -17,9 +18,9 @@ function Header() {
     bottom: false,
     right: false,
   });
-  const productList = useSelector((state) => state)
-  console.log(productList.userReducer.user?.email.slice(0, productList.userReducer.user?.email.search('@')))
 
+  const productList = useSelector((state) => state)
+  const [status, setStatus] = useState([]);
   const login = () => {
     if (productList.userReducer.user) {
       auth.signOut();
@@ -30,12 +31,15 @@ function Header() {
     history.push('/login')
   }
 
-  const toggleDrawer = (anchor, open) => (event) => {
+  const toggleDrawer = (anchor, open, name) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
     setState({ ...state, [anchor]: open });
+    setStatus(name)
+    console.log(name)
   };
+
   const right = 'right'
   return (
     <div className='header'>
@@ -51,11 +55,11 @@ function Header() {
             <p className='header__optionTwo'>{productList.userReducer.user?.email ? (<div onClick={login}>Sign Out</div>) : (<div onClick={signIn}>Sign In</div>)}</p>
           </div>
         </div>
-        <SearchIcon style={{ fontSize: 30 }}></SearchIcon>
-        <ShopIcon style={{ fontSize: 30 }} onClick={toggleDrawer(right, true)}></ShopIcon>
-        {productList.length ? (<p className='header__quantity'>{productList.length}</p>) : (<div></div>)}
+        <SearchIcon style={{ fontSize: 30 }} onClick={toggleDrawer(right, true, 'search')}></SearchIcon>
+        <ShopIcon style={{ fontSize: 30 }} onClick={toggleDrawer(right, true, 'shop')}></ShopIcon>
+        {productList.rootReducer.length ? (<p className='header__quantity'>{productList.rootReducer.length}</p>) : (<div></div>)}
         <Drawer anchor={right} open={state[right]} onClose={toggleDrawer(right, false)}>
-          <Cart close={() => toggleDrawer(right, false)}></Cart>
+          {status == 'shop' ? (<Cart close={() => toggleDrawer(right, false)}></Cart>) : (<Search close={() => toggleDrawer(right, false)}></Search>)}
         </Drawer>
       </div>
     </div>

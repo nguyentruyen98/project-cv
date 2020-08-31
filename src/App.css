@@ -10,5 +10,6 @@
   right: 20px;
   cursor: pointer;
   color: #fff;
+  z-index: 100;
 }
 
