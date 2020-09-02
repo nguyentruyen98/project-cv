@@ -34,7 +34,7 @@ function Search({ close }) {
       {search == '' ? (<div>Nhập từ khóa tìm kiếm</div>) : (<div>{searchitem?.map((item, index) => {
         if (item.name.toLowerCase().search(search) >= 0 && search != '') {
           return (
-            <Link to={`/searchproduct/${item.id}`} style={{ textDecoration: 'none' },{color:'black'}}><SearchItem price={item.price} img={item.img[0]} name={item.name} /></Link>
+            <Link to={`/searchproduct/${item.id}`} style={{ textDecoration: 'none' }, { color: 'black' }}><SearchItem price={item.price} img={item.img[0]} name={item.name} /></Link>
           )
         }
       })}</div>)}

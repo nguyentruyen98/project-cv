@@ -7,8 +7,12 @@ import Register from './component/Register'
 import Footer from './component/Footer';
 import routes from './routes.js';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import {setUser} from './redux/actions';
-import {  useDispatch } from 'react-redux';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Fade from '@material-ui/core/Fade';
+
+
+import { setUser } from './redux/actions';
+import { useDispatch } from 'react-redux';
 import $ from "jquery";
 import {
   BrowserRouter as Router,
@@ -43,11 +47,9 @@ function App() {
     const unsubcrible = auth.onAuthStateChanged(authUser => {
       if (authUser) {
         dispatchSetUser(authUser)
-        console.log(authUser)
       }
       else {
         dispatchSetUser(null)
-        console.log(authUser)
       }
     });
     return () => {
